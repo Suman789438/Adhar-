@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: aadhaar-bot
+    env: python
+    plan: free
+    buildCommand: |
+      apt-get update -qq && apt-get install -y -qq libgl1 libglib2.0-0 || true
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python merged_bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: DEVELOPER_USERNAME
+        sync: false
+      - key: REQUIRED_CHANNEL_IDS
+        sync: false
+      - key: FORCE_JOIN_ENABLED
+        value: "False"

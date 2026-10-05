@@ -1,0 +1,15 @@
+.env
+.env.local
+__pycache__/
+*.pyc
+*.pyo
+*.log
+stats.json
+errors.log
+cracked_history.txt
+cracked_history_report.txt
+cracked_aadhar/
+temp_captcha_*.png
+users_list.txt
+.venv/
+venv/
